@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block head_title %}
+    Get {{object.email}} // {{ block.super }}
+{% endblock %}
+
+{% block content %}
+    {% for object in object_list %}
+    <li><a href="/email/{{ object.id }}/">View</a>  {{ object.id }} - {{ object.email }}
+    <a href="/email/{{ object.id }}/destroy/">Destroy</a> - 
+    <a href="/email/{{ object.id }}/update/">Update</a>
+    </li><br/>
+    {% endfor %}
+{% endblock %}
+
+ 

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+    
+    
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mx-auto">
+                <img src='https://images.unsplash.com/photo-1591017403321-dc264d1fd6e5?ixid=MnwxMjA3fDF8MHxzZWFyY2h8MXx8YmVhY2h8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' class='img-fluid'>
+
+                <h1>Hello world!</h1>
+                <p class="lead">Welcome to MVP landing. We hope you launch your project or idea this way!</p>
+                {% if added %}
+                    <div class="alert alert-success">
+                        Thank you for joining, we'll be in touch!
+                    </div>
+                {% endif %}
+                {% include 'form.html' %}
+                
+                
+            </div>
+        </div>
+    </div>
+
+    
+{% endblock %}
