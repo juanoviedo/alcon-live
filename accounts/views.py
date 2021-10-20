@@ -1,13 +1,14 @@
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect
+
+# Create your views here.
 from .forms import (
     LoginForm,
     RegisterForm
 )
 
-# Create your views here.
-
 def logout_view(request):
+    # form
     logout(request)
     return redirect("/login")
 
@@ -16,12 +17,10 @@ def login_view(request):
     if form.is_valid():
         username = form.cleaned_data.get("username")
         password = form.cleaned_data.get("password")
-
         # verify valid username / password
-
         user = authenticate(username=username, password=password)
         if user == None:
-            print("User is invalid")
+            print("user is invalid")
             # later add a message
             return redirect("/login")
         # perform login
@@ -29,7 +28,9 @@ def login_view(request):
         login(request, user)
         # redirect to a logged in required page
         return redirect("/")
+
     return render(request, "accounts/login.html", {"form":form})
+
 
 def register_view(request):
     form = RegisterForm(request.POST or None)
@@ -40,6 +41,7 @@ def register_view(request):
         user_obj.save()
         user_obj.set_password(password)
         user_obj.save()
+        # send email confirmation
+        # user_obj.active = False
         return redirect("/login")
-        print(form.cleaned_data, user_obj)
     return render(request, "accounts/register.html", {"form": form})

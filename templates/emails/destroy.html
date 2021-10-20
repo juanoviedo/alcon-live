@@ -1,12 +1,12 @@
-{% extends 'base.html' %}
-
-{% block head_title %}
-    Destroy {{object.email}} // {{ block.super }}
-{% endblock %}
+{% extends "base.html" %}
+{% load static %}
 
 {% block content %}
-    <form method="POST">{% csrf_token %}
-        <p>Are you sure you want to delete {{ object.id }} view?</p>
-        <input type='submit' value='Delete?' />
-    </form>
+
+<form method='POST'>{% csrf_token %}
+    
+    <p>Are you sure you want to delete {{ object.id }} ?</p>
+    <input type='submit' value='Delete?' /> </form>
 {% endblock %}
+
+

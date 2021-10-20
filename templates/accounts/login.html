@@ -1,10 +1,12 @@
-{% extends 'base.html' %}
-
-{% block head_title %}
-    Login // {{ block.super }}
-{% endblock %}
+{% load static %}
+{% extends "base.html" %}
 
 {% block content %}
+
     <h1>Login</h1>
     {% include 'form.html' %}
 {% endblock %}
+
+
+
+

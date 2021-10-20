@@ -4,25 +4,14 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
     {% include 'base/css.html' %}
-    
-    <title>
-        {% block head_title %}
-            MVP Landing
-        {% endblock %}
+
+    <title>{% block head_title %}MVP Landing{% endblock head_title %}
     </title>
   </head>
-  <body class="bg-dark text-light">
+  <body class='bg-dark text-light'>
+    {% block content %}{% endblock content %}
 
-    {% block content %}
-        Hello again!
-    {% endblock %}
-
-
-    
     {% include 'base/js.html' %}
-
+  </body>
 </html>
-
