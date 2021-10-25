@@ -1,0 +1,264 @@
+{% extends 'main/base.html' %}
+
+{% block styles %}
+<style>
+    :root{
+        --orange: #dd8800;
+        --orangeop: #B26B00;
+        --green: #00FF00;
+        --blue: #23374d;
+        --blue-x: #0085FF;
+        --light-blue: #85c3FF;
+        --white: #eee;
+        --white-x: #dcdcdc;
+        --black: rgb(0, 0, 0);
+        --maxwidth: 1100px;
+    } 
+
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        font-family: sans-serif;
+        font-size: 14px;
+        text-transform: uppercase;
+        color: #777;
+    }
+
+    .lineasdenegocio {
+        max-width: 1100px;
+        box-sizing: border-box;
+        margin: auto;
+        position: relative;
+        color: #888;
+        padding: 28px 5%;
+        font-size: 28px;
+        letter-spacing: -3px;
+        z-index: -40;
+    }
+
+    .btn-whatsapp{
+        display:block;
+        width:70px;
+        height:70px;
+        color: var(--blue);
+        position: fixed;
+        right:30px;
+        bottom:20px;
+        border-radius:50%;
+        line-height:80px;
+        text-align:center;
+        z-index:999;
+    }
+
+    .btn-whatsapp a {
+        width: 100%;
+        height: 100%;
+    }
+
+    .flex-container {
+        margin: auto;
+        display: flex;
+        flex-flow: wrap;
+        max-width: var(--maxwidth);
+        box-sizing: border-box;
+    }
+
+    .flex-container a {
+        flex-grow: 1;
+    }
+
+    .contenedorf {
+        position: relative;
+        text-align: center;
+    }
+
+    .flex-container a img{
+        width: 100%;
+        height: 100%;
+        vertical-align: middle;
+        z-index: -40;
+    }
+
+    .texto-encima { 
+        box-sizing: border-box;
+        position: absolute;
+        top: 86%;
+        left: 2%;
+        color: #fff;
+        padding: 8px;
+        width: 180px;
+        font-size: 18px;
+        font-family: sans-serif;
+        font-weight: 600;
+        text-align: left;
+        z-index: 20;
+    }
+
+    .naranja {
+        background: var(--orange);
+    }
+
+    .verde {
+        background: #228;
+    }
+</style>
+{% endblock %}
+
+{% block title %}
+    Alcon de Colombia
+{% endblock %}
+
+
+{% block content %}
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="https://blog.qestudiarenlau.com/hubfs/Imported_Blog_Media/Imagenblogas254634.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="https://lh3.googleusercontent.com/proxy/Wq1qtYADXyDoTmaVSAyJWxu5Q3Ml7DgKO7E1_egHRtnD3hUbGitLwDOCcMmJ_zarrsRQUDkkMY2WGhDX07xGp8dxTZoYyjq3ZLbMgjAQr6yLgF3mI8vDNQ" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdjuJAbj1Lch52J0alDV-wnxCfDMyh42-6tw&usqp=CAU" class="d-block w-100" alt="...">
+        </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+
+    <div class="lineasdenegocio">
+		LÍNEAS DE <b>NEGOCIO</b>
+	</div>
+
+	<div class="flex-container" id="flexcontainer">
+		
+		<a href="" id="model">
+			<div class="contenedorf">
+				<img class="image" src="https://www.solla.com/sites/all/themes/twitter_bootstrap/images/cat_2.jpg?v=2">
+
+				<div class="texto-encima verde">
+					AVICULTURA
+				</div>
+			</div>
+		</a>
+
+		<a href="">
+			<div class="contenedorf">
+				<img class="image" src="https://www.solla.com/sites/all/themes/twitter_bootstrap/images/cat_4.jpg?v=2">
+
+				<div class="texto-encima naranja">
+					EQUINOS
+				</div>
+			</div>
+		</a>
+
+		<a href="">
+			<div class="contenedorf">
+				<img class="image" src="https://www.solla.com/sites/all/themes/twitter_bootstrap/images/cat_5.jpg?v=2">
+
+				<div class="texto-encima verde">
+					GANADERÍA
+				</div>
+			</div>
+		</a>
+
+		<a href="">
+			<div class="contenedorf">
+				<img class="image" src="https://www.solla.com/sites/all/themes/twitter_bootstrap/images/cat_7.jpg?v=2">
+
+				<div class="texto-encima naranja">
+					PORCICULTURA
+				</div>
+			</div>
+		</a>
+
+		<a href="" id="alastchild">
+			<div class="contenedorf">
+				<img class="image" src="https://www.solla.com/sites/all/themes/twitter_bootstrap/images/cat_6.jpg?v=2">
+
+				<div class="texto-encima verde">
+					MASCOTAS
+				</div>
+			</div>
+		</a>
+
+		<a href="" id="plastchild">
+			<div class="contenedorf">
+				<img class="image" src="https://www.solla.com/sites/all/themes/twitter_bootstrap/images/cat_3.jpg?v=2">
+
+				<div class="texto-encima naranja">
+					CUNICULTURA
+				</div>
+			</div>
+		</a>
+
+		<a href="" id="lastchild">
+			<div class="contenedorf">
+				<img class="image" src="https://www.solla.com/sites/all/themes/twitter_bootstrap/images/cat_1.jpg?v=2">
+
+				<div class="texto-encima verde">
+					ACUICULTURA
+				</div>
+			</div>
+		</a>
+
+	</div>
+
+
+	<div class="btn-whatsapp">   
+        <a href="https://wa.me/573168314501" target="_blank">
+            <img src="http://s2.accesoperu.com/logos/btn_whatsapp.png" alt="Whatsapp Mantenimientos" style="width: 60;">
+        </a> 
+    </div>
+
+{% endblock %}
+
+
+{% block js %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+<script>
+    // gsap animations
+    var animation = gsap.timeline();
+    animation
+        .from('.lineasdenegocio', { opacity: 0, duration: 1, ease: "back.out(1.7)", x: -100 }, "+=0.4")
+        .from('.btn-whatsapp', { duration: 2.4, ease: "bounce.out", y: -900})
+
+    // flex container
+    let container = document.getElementById("flexcontainer");
+    let childNum = container.childElementCount;
+
+    let elements = container.children;
+    let width = elements.item(0).clientWidth;
+
+    for (let i = 4; i < childNum; i++){
+        elements.item(i).style.maxWidth = width + 'px';
+    }
+
+    addEventListener("resize", ()=>{
+
+        elements = container.children;
+        width = elements.item(0).clientWidth;
+
+        for (let i = 4; i < childNum; i++){
+            elements.item(i).style.maxWidth = width + 'px';
+        }
+
+    })
+</script>
+
+{% endblock %}
