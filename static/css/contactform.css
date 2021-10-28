@@ -1,0 +1,59 @@
+@import './constants.css';
+
+.contact_form {
+	max-width: 600px;
+	margin: auto;
+}
+
+.formulario {
+	margin-top: 40px;
+	background: #eee;
+	border-radius: 10px;
+	padding: 20px;
+	border: 1px solid #228;
+}
+
+.obligatorio {
+	color: #228;
+	/font-size: 16px;
+	font-weight: 900;
+}
+
+.contact_form h2 {
+	text-align: center;
+	padding: 10px;
+	color: #228;
+	border-bottom: 1px solid #228;
+}
+
+.contact_form form input {
+	width: 100%;
+	margin: 10px 0; 
+	height: 32px;
+	border-radius: 4px;
+	border: 1px solid #228;
+}
+
+.contact_form form input:focus {
+	outline: none;
+	border: 2px solid var(--orange);
+}
+
+.contact_form form textarea {
+	width: 100%;
+	margin: 10px 0; 
+	height: 86px;
+	border-radius: 4px;
+	border: 1px solid #228;
+}
+
+.contact_form form button {
+	width: 100%;
+	margin: 10px 0;
+	background: #228;
+	color: #fff;
+	font-weight: 600;
+	border-radius: 10px;
+	border: none;
+	letter-spacing: 1px;
+}

@@ -1,0 +1,88 @@
+@import './constants.css';
+
+.icomenu {
+    width: 30px;
+    height: 30px;
+    color: #777;
+}
+
+.navbar {
+    width: 100%;
+    min-height: 50px;
+    background: #eee;
+    border-bottom: 1px solid #aaa;
+    border-top: 1px solid #aaa;
+    z-index: 100;
+}
+
+#btn-menu{
+	display: none;
+}
+
+.navbar label {
+	display: none;
+	width: 50px;
+	height: 50px;
+	padding: 10px;
+	font-size: 20px;
+	font-weight: 300;
+	/*border-right: 1px solid #fff;*/
+}
+
+.navbar label:hover {
+	cursor: pointer;
+	background: rgba(0,0,0,0.1);
+}
+
+.menu li{
+	/*border-left: 1px solid #fff;*/
+    transition: .5s all;   
+}
+
+.menu li:hover {
+	background: rgba(0,0,0,0.1);
+    transition-delay: 0s;
+}
+
+
+.menu ul {
+	margin: 0;
+	list-style: none;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+}
+
+.menu li a {
+	display: block;
+	padding: 30px;
+	color: #777;
+	text-decoration: none;
+}
+
+@media (max-width: 1200px) {
+	.navbar label{
+		display: block;
+	}
+
+	.menu {
+		position: absolute;
+		background: #eee;
+		width: 70%;
+		margin-left: -70%;
+		transition: all 0.5s;
+		z-index: 200;
+	}
+
+	.menu ul{
+		flex-direction: column;
+	}
+
+	.menu li {
+		border-top: 1px solid #aaa;
+	}
+
+	#btn-menu:checked ~ .menu{
+		margin-left: 0;
+	}
+}
