@@ -1,0 +1,26 @@
+{% extends "main/base.html" %}
+
+
+{% block title %}
+    Alcon de Colombia
+{% endblock %}
+
+{% block content %}
+    <div class="container mt-4">
+        {% for costumer in cli.all %}
+            <a href="/client/{{ costumer.id }}/"><h2>{{ costumer.name }}</h2></a>
+        {% endfor %}
+    </div>
+    <div class="container mt-4">
+        <h1>Crear Cliente:</h1>
+        <form method="POST" action="/client/create/">
+            {% csrf_token %}
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <button type="submit", name="save" class="btn btn-success">Create New Client</button>
+                </div>
+                {{form.name}}
+            </div>
+        </form>
+    </div>
+{% endblock %}

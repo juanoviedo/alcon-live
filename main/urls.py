@@ -2,6 +2,10 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
+    path("client/<int:id>/", views.client, name="client"),
+    path("client/create/", views.create, name="create"),
+
+    
     path('', views.home, name="home"),
     path('home/', views.home, name="home"),
     path('avicultura/', views.avicultura, name="avicultura"),
