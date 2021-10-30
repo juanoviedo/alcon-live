@@ -19,13 +19,28 @@ def client(response, id):
             concentrado = response.POST.get("concentrado")
             leche = response.POST.get("leche")
 
-            datem = datetime.datetime.strptime(fecha, "%Y-%m-%d")
-
             if int(vacas) > 2 and int(concentrado) > -1 and int(leche) > 0 and datem.year > 2000 and datem.year < 2100:
-                cli.day_set.create(date=fecha, totalcows=vacas, animalfeed=concentrado, totalmilk=leche)
+
+                lechevaca = leche/vacas
+                eficiencia = leche/concentrado
+                conversion = concentrado/leche
+
+                if eficiencia > 20:
+                    estado = "success"
+                    obser = "Tu día fue muy productivo!"
+
+                elif eficiencia < 20 and eficiencia > 15:
+                    estado = "warning"
+                    obser = "Tu estuvo bien pero puede mejorar"
+                else:
+                    estado = "danger"
+                    obser = "Tu día no fue muy productivo, debes revisar en que puedes mejorar"
+
+                datem = datetime.datetime.strptime(fecha, "%Y-%m-%d")
+
+                cli.day_set.create(date=fecha, cows=vacas, milk=leche, feed=concentrado, cowmilk=lechevaca, efficiency=eficiencia, conversion=conversion, status=estado, obs=obser)
             else:
                 print("invalid input")
-            
 
     return render(response, "main/client.html", {"cli":cli})
 

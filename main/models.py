@@ -13,7 +13,14 @@ class Client(models.Model):
 class Day(models.Model):
     day = models.ForeignKey(Client, on_delete=models.CASCADE)
     date = models.DateField(auto_now_add=False, auto_now=False, blank=True)
-    totalcows = models.IntegerField(null=True, blank=True)
-    animalfeed = models.IntegerField(null=True, blank=True)
-    totalmilk = models.IntegerField(null=True, blank=True)
+    cows = models.IntegerField(null=True, blank=True)
+    milk = models.IntegerField(null=True, blank=True)
+    feed = models.IntegerField(null=True, blank=True)
+    cowmilk = models.IntegerField(null=True, blank=True) # leche / vacas
+    efficiecy = models.IntegerField(null=True, blank=True) # leche / concentrado
+    conversion = models.IntegerField(null=True, blank=True) # concentrado / leche
+    status = models.CharField(max_length=30)
+    obs = models.CharField(max_length=300, blank=True, null=True)
     
+    def __str__(self):
+        return self.date

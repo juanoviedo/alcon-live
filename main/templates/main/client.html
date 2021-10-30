@@ -14,16 +14,19 @@
             <div class="row">
                 {% for item in cli.day_set.all %}
                     <div class="col-sm-4 mt-4">
-                        <div class="card border-success">
+                        <div class="card border-{{item.status}}">
                             <div class="card-body">
                                 <h4 class="card-title">Fecha (día): {{item.date}}</h4>
                                 <p class="card-text">
                                     Vacas Totales: {{item.totalcows}}<br/>
+                                    Total Producido Leche: {{item.totalmilk}}<br/>
                                     Total Concentrado: {{item.animalfeed}}<br/>
-                                    Total Producido Leche: {{item.totalmilk}}
+                                    Producido Leche/Vaca: {{item.cowmilk}}<br/>
+                                    Conversión: {{item.totalmilk}}<br/>
+                                    Total Producido Leche: {{item.totalmilk}}<br/>
                                 </p>
-                                <h5 class="text-success">Prod. Vaca: 98%</h5>
-                                
+                                <h5 class="text-{{item.status}}">Eficiencia l/concentrado: {{item.efficiency}}}</h5>
+                                <p>Observaciones: {{obs}}</p>
                             </div>
                         </div>
                     </div>
