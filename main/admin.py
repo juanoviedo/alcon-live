@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import Client, Day
+from .models import Client, PDay
 # Register your models here.
 
 admin.site.register(Client)
-admin.site.register(Day)
+admin.site.register(PDay)

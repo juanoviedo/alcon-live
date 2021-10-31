@@ -10,17 +10,17 @@ class Client(models.Model):
     def __str__(self):
         return self.name
 
-class Day(models.Model):
+class PDay(models.Model):
     day = models.ForeignKey(Client, on_delete=models.CASCADE)
     date = models.DateField(auto_now_add=False, auto_now=False, blank=True)
-    cows = models.IntegerField(null=True, blank=True)
-    milk = models.IntegerField(null=True, blank=True)
-    feed = models.IntegerField(null=True, blank=True)
-    cowmilk = models.IntegerField(null=True, blank=True) # leche / vacas
-    efficiecy = models.IntegerField(null=True, blank=True) # leche / concentrado
-    conversion = models.IntegerField(null=True, blank=True) # concentrado / leche
+    cows = models.FloatField(null=True, blank=True)
+    milk = models.FloatField(null=True, blank=True)
+    feed = models.FloatField(null=True, blank=True)
+    cowmilk = models.FloatField(null=True, blank=True) # leche / vacas
+    efficiency = models.FloatField(null=True, blank=True) # leche / concentrado
+    conversion = models.FloatField(null=True, blank=True) # concentrado / leche
     status = models.CharField(max_length=30)
     obs = models.CharField(max_length=300, blank=True, null=True)
     
     def __str__(self):
-        return self.date
+        return str(self.date)

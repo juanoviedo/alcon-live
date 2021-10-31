@@ -4,7 +4,7 @@ from django.http import HttpResponse
 import datetime
 
 from main.forms import CreateNewClient
-from .models import Client, Day
+from .models import Client, PDay
 # Create your views here.
 
 
@@ -13,32 +13,45 @@ def client(response, id):
 
     if response.method == "POST":
         print(response.POST)
-        if response.POST.get("save"):
-            fecha = response.POST.get("fecha")
-            vacas = response.POST.get("vacas")
-            concentrado = response.POST.get("concentrado")
-            leche = response.POST.get("leche")
+        if response.POST.get("del"):
+            pass
 
-            if int(vacas) > 2 and int(concentrado) > -1 and int(leche) > 0 and datem.year > 2000 and datem.year < 2100:
+        elif response.POST.get("save"):
+            fecha = response.POST.get("fecha")
+            vacas = float(response.POST.get("vacas"))
+            concentrado = float(response.POST.get("concentrado"))
+            leche = float(response.POST.get("leche"))
+
+            print(type(vacas))
+
+            datem = datetime.datetime.strptime(fecha, "%Y-%m-%d")
+
+            if vacas > 2 and concentrado > -0.1 and leche > -0.1 and datem.year > 2000 and datem.year < 2050:
 
                 lechevaca = leche/vacas
                 eficiencia = leche/concentrado
                 conversion = concentrado/leche
 
-                if eficiencia > 20:
+                if eficiencia > 1:
                     estado = "success"
                     obser = "Tu día fue muy productivo!"
 
-                elif eficiencia < 20 and eficiencia > 15:
+                elif eficiencia < 1 and eficiencia > 0.8:
                     estado = "warning"
-                    obser = "Tu estuvo bien pero puede mejorar"
+                    obser = "Tu día estuvo bien pero puede mejorar"
                 else:
                     estado = "danger"
                     obser = "Tu día no fue muy productivo, debes revisar en que puedes mejorar"
 
-                datem = datetime.datetime.strptime(fecha, "%Y-%m-%d")
-
-                cli.day_set.create(date=fecha, cows=vacas, milk=leche, feed=concentrado, cowmilk=lechevaca, efficiency=eficiencia, conversion=conversion, status=estado, obs=obser)
+                cli.pday_set.create(date=fecha,
+                                    cows=round(vacas),
+                                    milk=round(leche),
+                                    feed=round(concentrado),
+                                    cowmilk=round(lechevaca, 2),
+                                    efficiency=round(eficiencia, 2),
+                                    conversion=round(conversion, 2),
+                                    status=estado,
+                                    obs=obser)
             else:
                 print("invalid input")
 

@@ -12,21 +12,21 @@
 
         <div class="mx-auto mb-4">
             <div class="row">
-                {% for item in cli.day_set.all %}
+                {% for item in cli.pday_set.all %}
                     <div class="col-sm-4 mt-4">
                         <div class="card border-{{item.status}}">
                             <div class="card-body">
                                 <h4 class="card-title">Fecha (día): {{item.date}}</h4>
                                 <p class="card-text">
-                                    Vacas Totales: {{item.totalcows}}<br/>
-                                    Total Producido Leche: {{item.totalmilk}}<br/>
-                                    Total Concentrado: {{item.animalfeed}}<br/>
-                                    Producido Leche/Vaca: {{item.cowmilk}}<br/>
-                                    Conversión: {{item.totalmilk}}<br/>
-                                    Total Producido Leche: {{item.totalmilk}}<br/>
+                                    Vacas Totales: {{item.cows}}<br/>
+                                    Total Producido Leche: {{item.milk}}<br/>
+                                    Total Concentrado: {{item.feed}}<br/>
+                                    Producido (Leche/Vaca): {{item.cowmilk}}<br/>
+                                    Conversión: {{item.conversion}}<br/>
                                 </p>
-                                <h5 class="text-{{item.status}}">Eficiencia l/concentrado: {{item.efficiency}}}</h5>
-                                <p>Observaciones: {{obs}}</p>
+                                <h5 class="text-{{item.status}}">Eficiencia (litros/concentrado): {{item.efficiency}}</h5>
+                                <p>Observaciones: {{item.obs}}</p>
+                                <!-- <input type="button" class="btn btn-{{item.status}}" name="c{{item.id}}">Eliminar</input> -->
                             </div>
                         </div>
                     </div>
