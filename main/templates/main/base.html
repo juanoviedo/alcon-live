@@ -1,3 +1,5 @@
+{% load active_link_tags %}
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -28,28 +30,28 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
-                <li class="nav-item active">
-                <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
+                <li class="nav-item {% active_link 'home' 'active' %}">
+                <a class="nav-link" href="/home">Home <!-- <span class="sr-only">(current)</span> --></a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item {% active_link 'avicultura' 'active' %}">
                 <a class="nav-link" href="/avicultura">Avicultura</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item {% active_link 'equinos' 'active' %}">
                 <a class="nav-link" href="/equinos">Equínos</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item {% active_link 'ganaderia' 'active' %}">
                 <a class="nav-link" href="/ganaderia">Ganadería</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item {% active_link 'porcicultura' 'active' %}">
                 <a class="nav-link" href="/porcicultura">Porcicultura</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item {% active_link 'mascotas' 'active' %}">
                 <a class="nav-link" href="/mascotas">Mascotas</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item {% active_link 'cunicultura' 'active' %}">
                 <a class="nav-link" href="/cunicultura">Cunicultura</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item {% active_link 'acuicultura' 'active' %}">
                 <a class="nav-link" href="/acuicultura">Acuicultura</a>
                 </li>
                 <li class="nav-item dropdown">

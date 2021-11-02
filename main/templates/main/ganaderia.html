@@ -1,10 +1,85 @@
 {% extends "main/base.html" %}
 
+{% block styles %}
+    <style>
+    .parallax {        
+      /* The image used */
+      background-image: url("https://www.gastroactitud.com/wp-content/uploads/2021/07/frisona-1280x720.jpg");
+    
+      /* Set a specific height */
+      min-height: 600px;
+    
+      /* Create the parallax scrolling effect */
+      background-attachment: fixed;
+      background-position: top right;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    </style>
+{% endblock %}
+
 
 {% block title %}
-    Alcon de Colombia
+    Ganadería
 {% endblock %}
 
 {% block content %}
-    <h1>Hello, you are in ganaderia page</h1>
+    <div class="parallax"></div>
+    <div class="container mx-auto mt-5 text-center">
+        <h1 class="text-warning">¡Somos expertos en Ganadería!</h1>
+
+        <p>Somos una empresa dedicada a la producción, comercialización y prestación de servicios de óptima calidad en el sector de la nutrición animal.</p>
+    </div>
+
+    <div class="mx-auto container">
+        <div class="row">
+            <div class="col-sm-6 mt-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Visión</h4>
+                        <p class="card-text">
+                            Alcon de Colombia será una planta de producción, comercialización y prestación de servicios en el sector de nutrición animal, sus productos serán fabricados con materias primas de óptima calidad y alta competitividad.
+                            <br/><br/>
+                            Alcon de Colombia dará a sus clientes un servicio integral y propenderá por la satisfacción razonable de sus clientes internos y externos, será siempre respetuosa del medio ambiente y trabajara bajo principios éticos y de cooperación.
+                        </p>
+                    
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 mt-4">
+                <img style="max-width: 100%; border-radius: 3px;" src="http://abc.finkeros.com/wp-content/uploads/2013/05/ubre.jpg">
+            </div>
+
+            <div class="col-sm-6 mt-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Visión</h4>
+                        <p class="card-text">
+                            Alcon de Colombia será una planta de producción, comercialización y prestación de servicios en el sector de nutrición animal, sus productos serán fabricados con materias primas de óptima calidad y alta competitividad.
+                            <br/><br/>
+                            Alcon de Colombia dará a sus clientes un servicio integral y propenderá por la satisfacción razonable de sus clientes internos y externos, será siempre respetuosa del medio ambiente y trabajara bajo principios éticos y de cooperación.
+                        </p>
+                    
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 mt-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Visión</h4>
+                        <p class="card-text">
+                            Alcon de Colombia será una planta de producción, comercialización y prestación de servicios en el sector de nutrición animal, sus productos serán fabricados con materias primas de óptima calidad y alta competitividad.
+                            <br/><br/>
+                            Alcon de Colombia dará a sus clientes un servicio integral y propenderá por la satisfacción razonable de sus clientes internos y externos, será siempre respetuosa del medio ambiente y trabajara bajo principios éticos y de cooperación.
+                        </p>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
 {% endblock %}
