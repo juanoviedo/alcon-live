@@ -12,7 +12,17 @@
   
     {% block styles %}
 
+
     {% endblock %}
+
+    <style>
+        nav {
+            margin: 0;
+            font-family: sans-serif;
+            font-size: 14px;
+            /* text-transform: uppercase; */
+        }
+    </style>
 
     <title>
         {% block title %}
@@ -24,39 +34,39 @@
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <a class="navbar-brand" href="#">Alcon de Colombia</a>
+            <a class="navbar-brand" href="#">ALCON DE COLOMBIA</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item {% active_link 'home' 'active' %}">
-                <a class="nav-link" href="/home">Home <!-- <span class="sr-only">(current)</span> --></a>
+                <a class="nav-link" href="/home">HOME <!-- <span class="sr-only">(current)</span> --></a>
                 </li>
                 <li class="nav-item {% active_link 'avicultura' 'active' %}">
-                <a class="nav-link" href="/avicultura">Avicultura</a>
+                <a class="nav-link" href="/avicultura">AVICULTURA</a>
                 </li>
                 <li class="nav-item {% active_link 'equinos' 'active' %}">
-                <a class="nav-link" href="/equinos">Equínos</a>
+                <a class="nav-link" href="/equinos">EQUINOS</a>
                 </li>
                 <li class="nav-item {% active_link 'ganaderia' 'active' %}">
-                <a class="nav-link" href="/ganaderia">Ganadería</a>
+                <a class="nav-link" href="/ganaderia">GANADERÍA</a>
                 </li>
                 <li class="nav-item {% active_link 'porcicultura' 'active' %}">
-                <a class="nav-link" href="/porcicultura">Porcicultura</a>
+                <a class="nav-link" href="/porcicultura">PORCICULTURA</a>
                 </li>
                 <li class="nav-item {% active_link 'mascotas' 'active' %}">
-                <a class="nav-link" href="/mascotas">Mascotas</a>
+                <a class="nav-link" href="/mascotas">MASCOTAS</a>
                 </li>
                 <li class="nav-item {% active_link 'cunicultura' 'active' %}">
-                <a class="nav-link" href="/cunicultura">Cunicultura</a>
+                <a class="nav-link" href="/cunicultura">CUNICULTURA</a>
                 </li>
                 <li class="nav-item {% active_link 'acuicultura' 'active' %}">
-                <a class="nav-link" href="/acuicultura">Acuicultura</a>
+                <a class="nav-link" href="/acuicultura">ACUICULTURA</a>
                 </li>
                 <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="/vidinst" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Más
+                    MÁS
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="/vidinst">Videos Institucionales</a>

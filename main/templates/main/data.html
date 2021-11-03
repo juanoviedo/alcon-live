@@ -1,0 +1,36 @@
+{% extends "main/client.html" %}
+
+
+{% block table %}
+
+<a class="btn btn-primary mb-3" href="/client/{{cli.id}}/">Esconder Tabla de Datos</a>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Fecha (Día)</th>
+            <th scope="col">Vacas Totales</th>
+            <th scope="col">Total Leche</th>
+            <th scope="col">Total Concentrado</th>
+            <th scope="col">Producido (Leche/Vaca)</th>
+            <th scope="col">Conversión</th>
+            <th scope="col">Eficiencia</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for item in cli.pday_set.all %}
+            <tr>
+                <th scope="row">{{item.date}}</th>
+                <td>{{item.cows}}</td>
+                <td>{{item.milk}}</td>
+                <td>{{item.feed}}</td>
+                <td>{{item.cowmilk}}</td>
+                <td>{{item.conversion}}</td>
+                <td class="text-{{item.status}}" style="font-weight: 700;">{{item.efficiency}}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    
+{% endblock %}
+

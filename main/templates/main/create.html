@@ -15,12 +15,10 @@
         <h1>Crear Cliente:</h1>
         <form method="POST" action="/client/create/">
             {% csrf_token %}
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <button type="submit", name="save" class="btn btn-success">Create New Client</button>
-                </div>
-                {{form.name}}
-            </div>
+
+            {{form.name}}
+            <br/>
+            <button type="submit", name="save" class="btn btn-success mt-3">Create New Client</button>
         </form>
     </div>
 {% endblock %}

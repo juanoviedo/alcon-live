@@ -2,7 +2,11 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
+
+    path("enviarwsap/", views.enviarwsap, name="enviarwsap"),
+
     path("client/<int:id>/", views.client, name="client"),
+    path("client/<int:id>/data/", views.data, name="data"),
     path("client/create/", views.create, name="create"),
 
     
