@@ -8,7 +8,7 @@ from .models import Client, PDay
 # Create your views here.
 
 
-def SendData(request):
+def enviarwsap(request):
     if request.method == 'POST':
         Ph = request.POST['Phone']
         Message = request.POST['Message']
